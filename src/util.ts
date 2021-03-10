@@ -2,10 +2,10 @@
  * @Date: 2021-01-09 19:14:33
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-01-12 22:00:40
+ * @LastEditTime: 2021-03-09 16:12:52
  */
 
-import { GM_xmlhttpRequest } from './@types/tm_f';
+// import { GM_xmlhttpRequest } from './@types/tm_f';
 
 export async function proxyLogin(): Promise<boolean> {
   const username = (document.querySelector(

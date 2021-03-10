@@ -2,68 +2,39 @@
  * @Date: 2021-01-09 16:19:24
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-01-12 21:58:02
+ * @LastEditTime: 2021-03-10 11:25:48
  */
 
-import { readFileSync } from 'fs';
 import path from 'path';
-import TerserPlugin from 'terser-webpack-plugin';
-
-import webpack from 'webpack';
-
-const w = webpack({
+import { Configuration } from 'webpack';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { TampermonkeyWebpackPlugin } from 'tampermonkey-webpack-plugin';
+import config from './tampermonkey.config';
+export default {
   entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: ['ts-loader'],
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    extensions: ['.js', '.ts'],
   },
   externals: {
     sweetalert2: 'Swal',
   },
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: 'all',
-          },
-        },
-        extractComments: true,
-      }),
-    ],
   },
-  plugins: [
-    new webpack.BannerPlugin({
-      banner: (): string => {
-        // const reg = /\/\/(\s*)\=\=UserScript\=\=([\s\S]*)\/\/(\s*)\=\=\/UserScript\=\=(\s*)/i;
-        // const targetArr = reg.exec(readFileSync('./src/index.ts', 'utf-8')) ?? [
-        //   '',
-        // ];
-        return readFileSync('./tampermonkey.txt', 'utf-8');
-      },
-      raw: true,
-      entryOnly: false,
-    }),
-  ],
-});
-
-// w.watch({}, () => {
-//   console.log(new Date().toISOString());
-// });
-w.run(() => {});
-
-// /\/\/(\s*)\=\=UserScript\=\=([\s\S]*)\/\/(\s*)\=\=\/UserScript\=\=(\s*)/i
+  plugins: [new CleanWebpackPlugin(), new TampermonkeyWebpackPlugin(config)],
+} as Configuration;

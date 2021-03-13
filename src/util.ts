@@ -2,9 +2,8 @@
  * @Date: 2021-01-09 19:14:33
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-03-09 16:12:52
+ * @LastEditTime: 2021-03-13 19:34:14
  */
-
 // import { GM_xmlhttpRequest } from './@types/tm_f';
 
 export async function proxyLogin(): Promise<boolean> {

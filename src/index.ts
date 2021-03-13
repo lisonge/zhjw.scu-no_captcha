@@ -2,11 +2,11 @@
  * @Date: 2021-01-09 16:12:54
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-03-10 00:51:36
+ * @LastEditTime: 2021-03-13 21:20:06
  */
 
-import { proxyLogin, proxyLogout } from './util';
 import Swal from 'sweetalert2';
+import { proxyLogin, proxyLogout } from './util';
 
 if (location.pathname.startsWith('/login')) {
   ['#input_checkcode', '#native > a']
@@ -31,7 +31,7 @@ if (location.pathname.startsWith('/login')) {
         title: '登录失败',
         text: '账号/密码错误',
         footer:
-          '<a href="http://my.scu.edu.cn/index.portal" target="_blank">去这里登录</a>',
+          '<a href="https://github.com/lisonge/zhjw.scu-no_captcha.git" target="_blank">登录说明</a>',
       });
     }
   });

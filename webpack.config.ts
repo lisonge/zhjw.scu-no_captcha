@@ -2,19 +2,18 @@
  * @Date: 2021-01-09 16:19:24
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-03-13 21:09:59
+ * @LastEditTime: 2021-03-14 19:57:36
  */
 
 import { Configuration } from 'webpack';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { TampermonkeyWebpackPlugin } from 'tampermonkey-webpack-plugin';
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
-import { header, options } from './tampermonkey.config';
+import tampermonkeyOptions from './tampermonkey.config';
 import { join, resolve } from 'path';
 
-const mode = process.env.NODE_ENV as 'production' | 'development';
-const isDev = mode == 'development';
-
+const host = '127.0.0.1';
+const port = 8080;
 export default {
   entry: './src/index.ts',
   devtool: 'inline-source-map',
@@ -41,17 +40,17 @@ export default {
     sweetalert2: 'Swal',
   },
   output: {
-    filename: 'index.js',
+    filename: 'bundle.user.js',
     path: resolve(__dirname, 'dist'),
-    publicPath: 'http://127.0.0.1:8080/',
+    publicPath: `http://${host}:${port}/`,
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new TampermonkeyWebpackPlugin(header, options),
+    new TampermonkeyWebpackPlugin(tampermonkeyOptions),
   ],
   devServer: {
-    host: '127.0.0.1',
-    port: 8080,
+    host,
+    port,
     filename: 'index.js',
     disableHostCheck: true,
     headers: {

@@ -19,7 +19,7 @@
     "@types/webpack": "^4.41.25",
     "@types/webpack-dev-server": "^3.11.2",
     "clean-webpack-plugin": "^3.0.0",
-    "tampermonkey-webpack-plugin": "0.1.4",
+    "tampermonkey-webpack-plugin": "0.1.7",
     "ts-loader": "^8.0.14",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3",

@@ -5,7 +5,7 @@ devDependencies:
   '@types/webpack': 4.41.26
   '@types/webpack-dev-server': 3.11.2
   clean-webpack-plugin: 3.0.0_webpack@5.24.4
-  tampermonkey-webpack-plugin: 0.1.4
+  tampermonkey-webpack-plugin: 0.1.7
   ts-loader: 8.0.17_typescript@4.2.3+webpack@5.24.4
   ts-node: 9.1.1_typescript@4.2.3
   typescript: 4.2.3
@@ -3644,13 +3644,13 @@ packages:
     resolution:
       integrity: sha1-zKJy/bRMDz7vPgdOvtSWXpuvEY8=
       tarball: sweetalert2/download/sweetalert2-10.15.5.tgz
-  /tampermonkey-webpack-plugin/0.1.4:
+  /tampermonkey-webpack-plugin/0.1.7:
     dependencies:
       webpack: 5.25.0
     dev: true
     resolution:
-      integrity: sha1-msG2/D/9tx/Elc8cEYjpRqLFR1I=
-      tarball: tampermonkey-webpack-plugin/download/tampermonkey-webpack-plugin-0.1.4.tgz
+      integrity: sha1-lmGrs8K75rtNICguJfP2XQErBKI=
+      tarball: tampermonkey-webpack-plugin/download/tampermonkey-webpack-plugin-0.1.7.tgz
   /tapable/1.1.3:
     dev: true
     engines:
@@ -4273,7 +4273,7 @@ specifiers:
   '@types/webpack-dev-server': ^3.11.2
   clean-webpack-plugin: ^3.0.0
   sweetalert2: ^10.13.0
-  tampermonkey-webpack-plugin: 0.1.4
+  tampermonkey-webpack-plugin: 0.1.7
   ts-loader: ^8.0.14
   ts-node: ^9.1.1
   typescript: ^4.1.3

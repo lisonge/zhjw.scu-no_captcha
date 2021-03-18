@@ -2,7 +2,7 @@
  * @Date: 2021-03-13 21:07:58
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-03-15 20:42:10
+ * @LastEditTime: 2021-03-18 15:15:23
 -->
 
 # zhjw.scu-no_captcha
@@ -32,3 +32,7 @@ Set-Cookie: iPlanetDirectoryPro=aaabbb; Path=/; Domain=.scu.edu.cn
 由于真实登录接口已经改变，所以登录时需要使用 [四川大学信息门户](http://my.scu.edu.cn/) 的登录密码
 
 登录后可改密码与 **教务管理系统** 一致，在使用上就做到了 **无验证码登录**
+
+## 示例
+
+![avatar](https://hub.fastgit.org/lisonge/src/raw/main/gif/zhjw.scu-no_captcha_example.gif)
